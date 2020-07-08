@@ -1,0 +1,58 @@
+HTTP/1.1 200
+Content-Type: application/json
+
+{
+  "id": "037490af-89ee-4794-9022-f7b91a6ddaac",
+  "paymentType": "NETELLER",
+  "paymentHandleToken": "paymentHandleId",
+  "merchantRefNum": "b8a8ae3d-1771-4113-aa54-be0721977c0d",
+  "currencyCode": "EUR",
+  "txnTime": "2020-03-19T06:38:07.000+0000",
+  "customerIp": "172.0.0.1",
+  "status": "PAYABLE",
+  "links": [
+    {
+      "rel": "redirect_payment",
+      "href": "https://api.qa.paysafe.com/alternatepayments/v1/redirect?accountId=1011872745&paymentHandleId=037490af-89ee-4794-9022-f7b91a6ddaac&token=eyJhbGciOiJIUzI1NiJ9.eyJhY2QiOiIxMDExODcyNzQ1IiwicHlkIjoiMDM3NDkwYWYtODllZS00Nzk0LTkwMjItZjdiOTFhNmRkYWFjIiwiZXhwIjoxNTg0NjAxNjg4fQ.e-C3wR7Z3sqBLp0-lS4ksZNsKvs4jV-J_kLphB4N5aM"
+    }
+  ],
+  "liveMode": false,
+  "usage": "SINGLE_USE",
+  "action": "REDIRECT",
+  "executionMode": "SYNCHRONOUS",
+  "amount": 100,
+  "merchantDescriptor": {
+    "dynamicDescriptor": "OnlineStore",
+    "phone": "12345678"
+  },
+  "timeToLiveSeconds": 899,
+  "gatewayResponse": {
+    "orderId": "ORD_5cc31a72-5ac9-429b-8105-43c8a1c1189e",
+    "totalAmount": "1100",
+    "currency": "EUR",
+    "lang": "en_US",
+    "status": "pending",
+    "processor": "NETELLER"
+  },
+  "returnLinks": [
+      {
+          "rel": "default",
+          "href": "https://url/return"
+      },
+      {
+          "rel": "on_completed",
+          "href": "https://url/success"
+      },
+      {
+          "rel": "on_failed",
+          "href": "https://url/failure"
+      }
+  ],
+  "transactionType": "PAYMENT",
+  "updatedTime": "2020-03-19T06:38:08Z",
+  "statusTime": "2020-03-19T06:38:08Z",
+  "neteller": {
+    "consumerId": "consumer@example.com",
+    "consumerIdLocked": true
+  }
+}

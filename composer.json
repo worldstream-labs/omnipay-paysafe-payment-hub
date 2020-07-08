@@ -1,0 +1,39 @@
+{
+    "name": "worldstream-labs/omnipay-paysafe-payment-hub",
+    "type": "library",
+    "description": "Paysafe Payment Hub driver for the Omnipay payment processing library used for Neteller",
+    "keywords": [
+        "gateway",
+        "merchant",
+        "paysafe",
+        "paymenthub",
+        "neteller",
+        "omnipay",
+        "pay",
+        "payment"
+    ],
+    "autoload": {
+        "psr-4": {
+            "Omnipay\\PaysafePaymentHub\\": "src/"
+        }
+    },
+    "require": {
+        "php": "^5.6|^7",
+        "omnipay/common": "^3.0.1",
+        "ext-json": "*"
+    },
+    "require-dev": {
+        "omnipay/tests": "^3.1"
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "prefer-stable": true,
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Rory Scholman",
+            "email": "rory.scholman@worldstream.nl"
+        }
+    ]
+}
