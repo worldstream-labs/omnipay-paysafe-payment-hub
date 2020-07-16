@@ -1,0 +1,50 @@
+HTTP/1.1 200
+Content-Type: application/json
+
+{
+    "id": "82d57742-e2db-48ea-a726-a60e6f8265a3",
+    "paymentType": "NETELLER",
+    "paymentHandleToken": "PHQhlWpTRKzBXubN",
+    "merchantRefNum": "abcdefg",
+    "currencyCode": "EUR",
+    "dupCheck": true,
+    "status": "INITIATED",
+    "liveMode": true,
+    "usage": "SINGLE_USE",
+    "action": "REDIRECT",
+    "executionMode": "SYNCHRONOUS",
+    "amount": 1100,
+    "customerIp": "172.0.0.1",
+    "timeToLiveSeconds": 899,
+    "gatewayResponse": {
+        "orderId": "ORD_0d676b4b-0eb8-4d78-af25-e41ab431e325",
+        "totalAmount": 1100,
+        "currency": "EUR",
+        "status": "pending",
+        "lang": "en_US",
+        "processor": "NETELLER"
+    },
+    "neteller": {
+        "consumerId": "consumer@example.com",
+        "detail1Description": "description",
+        "detail1Text": "text"
+    },
+    "returnLinks": [
+        {
+            "rel": "default",
+            "href": "https://url/return"
+        },
+        {
+            "rel": "on_completed",
+            "href": "https://url/success"
+        },
+        {
+            "rel": "on_failed",
+            "href": "https://url/failure"
+        }
+    ],
+    "txnTime": "2020-07-04T10:39:50Z",
+    "updatedTime": "2020-07-04T10:39:50Z",
+    "statusTime": "2020-07-04T10:39:50Z",
+    "links": []
+}
