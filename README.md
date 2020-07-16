@@ -1,5 +1,7 @@
 # Omnipay: Paysafe Payment Hub
 
+[![Build Status](https://travis-ci.org/worldstream-labs/omnipay-paysafe-payment-hub.svg?branch=master)](https://travis-ci.org/worldstream-labs/omnipay-paysafe-payment-hub) [![Latest Stable Version](https://poser.pugx.org/worldstream-labs/omnipay-paysafe-payment-hub/v)](//packagist.org/packages/worldstream-labs/omnipay-paysafe-payment-hub) [![Total Downloads](https://poser.pugx.org/worldstream-labs/omnipay-paysafe-payment-hub/downloads)](//packagist.org/packages/worldstream-labs/omnipay-paysafe-payment-hub) [![License](https://poser.pugx.org/worldstream-labs/omnipay-paysafe-payment-hub/license)](//packagist.org/packages/worldstream-labs/omnipay-paysafe-payment-hub)
+
 Paysafe Payment Hub library for the Omnipay V3 payment library, used for Neteller (and Skrill later).
 
 ## Installation
