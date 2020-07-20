@@ -3,6 +3,7 @@
 namespace Omnipay\PaysafePaymentHub;
 
 use Omnipay\PaysafePaymentHub\Message\Request\CompletePurchaseRequest;
+use Omnipay\PaysafePaymentHub\Message\Request\FetchTransactionRequest;
 use Omnipay\PaysafePaymentHub\Message\Request\GetPaymentHandleRequest;
 use Omnipay\PaysafePaymentHub\Message\Request\GetPaymentHandlesByMerchantReferenceNumberRequest;
 use Omnipay\PaysafePaymentHub\Message\Request\PurchaseRequest;
@@ -51,6 +52,14 @@ class GatewayTest extends GatewayTestCase
         $this->assertInstanceOf(
             GetPaymentHandlesByMerchantReferenceNumberRequest::class,
             $this->gateway->getPaymentHandlesByMerchantReferenceNumber()
+        );
+    }
+
+    public function testFetchTransaction()
+    {
+        $this->assertInstanceOf(
+            FetchTransactionRequest::class,
+            $this->gateway->fetchTransaction()
         );
     }
 }

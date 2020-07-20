@@ -4,8 +4,6 @@ namespace Omnipay\PaysafePaymentHub\Message\Response;
 
 class CompletePurchaseResponse extends Response
 {
-    const STATUS_COMPLETED = 'COMPLETED';
-
     /**
      * @return bool
      */

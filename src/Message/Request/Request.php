@@ -36,6 +36,24 @@ abstract class Request extends AbstractRequest
     }
 
     /**
+     * @return string
+     */
+    public function getPaymentId()
+    {
+        return $this->getParameter('paymentId');
+    }
+
+    /**
+     * @param string $paymentId
+     *
+     * @return self
+     */
+    public function setPaymentId($paymentId)
+    {
+        return $this->setParameter('paymentId', $paymentId);
+    }
+
+    /**
      * @param string $endpoint
      *
      * @return string

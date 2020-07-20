@@ -9,6 +9,7 @@ use Omnipay\Common\Message\AbstractResponse;
 abstract class Response extends AbstractResponse
 {
     const REDIRECT_PAYMENT = 'redirect_payment';
+    const STATUS_COMPLETED = 'COMPLETED';
 
     public function isSuccessful()
     {
