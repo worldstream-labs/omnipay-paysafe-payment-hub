@@ -89,6 +89,24 @@ if ($response->getPaymentHandle()->isPayable()) {
 
 ```
 
+### Fetch transaction
+
+```php
+<?php
+
+$gateway = Omnipay::create('PaysafePaymentHub');
+$gateway->setApiKey('yourApiKey');
+
+$response = $gateway->fetchTransaction([
+    'paymentId' = $paymentId,
+])->send();
+
+if ($response->isComplete()) {
+    // payment is complete
+}
+
+```
+
 ## Tests
 Run the unit tests with `composer run test`
 

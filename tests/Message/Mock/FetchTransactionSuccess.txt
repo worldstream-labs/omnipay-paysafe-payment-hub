@@ -1,0 +1,44 @@
+HTTP/1.1 200
+Content-Type: application/json
+
+{
+  "id": "67869d92-4df1-455b-80f4-780abbce41b4",
+  "paymentType": "NETELLER",
+  "paymentHandleToken": "PHi2MeARP5OxuXIm",
+  "merchantRefNum": "4a33324e-ae23-4c48-955b-33ee189933f3",
+  "currencyCode": "EUR",
+  "settleWithAuth": true,
+  "txnTime": "2020-03-19T06:38:07.000+0000",
+  "billingDetails": {
+    "street1": "100 Queen",
+    "street2": "Unit 201",
+    "city": "Toronto",
+    "zip": "M5H 2N2",
+    "country": "CA"
+  },
+  "status": "COMPLETED",
+  "gatewayReconciliationId": "b8a8ae3d-1771-4113-aa54-be0721977c0d",
+  "amount": 1100,
+  "consumerIp": "172.0.0.1",
+  "liveMode": false,
+  "updatedTime": "2020-03-19T06:44:22Z",
+  "statusTime": "2020-03-19T06:44:22Z",
+  "gatewayResponse": {
+    "orderId": "ORD_5cc31a72-5ac9-429b-8105-43c8a1c1189e",
+    "totalAmount": "1100",
+    "currency": "EUR",
+    "lang": "en_US",
+    "customerId": "CUS_718980F1-7B2F-41CA-A758-644043362B11",
+    "verificationLevel": "10",
+    "transactionId": "127934948749341",
+    "transactionType": "Member to Merchant Transfer (Order)",
+    "description": "neteller.account@example.org to Neteller Simulator Test",
+    "status": "paid",
+    "processor": "NETELLER"
+  },
+  "availableToSettle": 0,
+  "neteller": {
+    "consumerId": "consumer@example.com",
+    "consumerIdLocked": true
+  }
+}

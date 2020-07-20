@@ -4,6 +4,7 @@ namespace Omnipay\PaysafePaymentHub;
 
 use Omnipay\Common\AbstractGateway;
 use Omnipay\PaysafePaymentHub\Message\Request\CompletePurchaseRequest;
+use Omnipay\PaysafePaymentHub\Message\Request\FetchTransactionRequest;
 use Omnipay\PaysafePaymentHub\Message\Request\GetPaymentHandleRequest;
 use Omnipay\PaysafePaymentHub\Message\Request\GetPaymentHandlesByMerchantReferenceNumberRequest;
 use Omnipay\PaysafePaymentHub\Message\Request\PurchaseRequest;
@@ -18,7 +19,6 @@ use Omnipay\PaysafePaymentHub\Message\Request\PurchaseRequest;
  * @method \Omnipay\Common\Message\RequestInterface      createCard(array $options = [])
  * @method \Omnipay\Common\Message\RequestInterface      updateCard(array $options = [])
  * @method \Omnipay\Common\Message\RequestInterface      deleteCard(array $options = [])
- * @method \Omnipay\Common\Message\RequestInterface      fetchTransaction(array $options = [])
  */
 class Gateway extends AbstractGateway
 {
@@ -76,8 +76,15 @@ class Gateway extends AbstractGateway
     }
 
     /**
+     * @return FetchTransactionRequest
+     */
+    public function fetchTransaction(array $options = [])
+    {
+        return $this->createRequest(FetchTransactionRequest::class, $options);
+    }
+
+    /**
      * @return string
-     * @return self
      */
     public function getApiKey()
     {
