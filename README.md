@@ -6,7 +6,7 @@ Paysafe Payment Hub library for the Omnipay V3 payment library, used for Netelle
 
 ## Installation
 Use composer to add the library as dependency for your project
-`composer require worldstream-labs/omnipay-paysafe-payment-hub`
+`composer require league/omnipay worldstream-labs/omnipay-paysafe-payment-hub`
 
 ## Development
 To set up for development:  
