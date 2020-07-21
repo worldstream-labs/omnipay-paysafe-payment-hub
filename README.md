@@ -98,7 +98,7 @@ $gateway = Omnipay::create('PaysafePaymentHub');
 $gateway->setApiKey('yourApiKey');
 
 $response = $gateway->fetchTransaction([
-    'paymentId' = $paymentId,
+    'transactionId' => $webhook['payload']['id'],
 ])->send();
 
 if ($response->isComplete()) {
