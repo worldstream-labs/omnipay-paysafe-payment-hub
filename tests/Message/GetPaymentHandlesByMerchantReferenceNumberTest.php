@@ -110,5 +110,6 @@ class GetPaymentHandlesByMerchantReferenceNumberTest extends TestCase
         $this->assertSame('INITIATED', $paymentHandle->getStatus());
         $this->assertSame(1.00, $paymentHandle->getAmount());
         $this->assertSame('EUR', $paymentHandle->getCurrencyCode());
+        $this->assertSame($expectedPaymentHandle, $paymentHandle->getData());
     }
 }
