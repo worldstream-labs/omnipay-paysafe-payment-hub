@@ -65,4 +65,12 @@ class PaymentHandle
     {
         return $this->data['currencyCode'];
     }
+
+    /**
+     * @return array
+     */
+    public function getData()
+    {
+        return $this->data;
+    }
 }
