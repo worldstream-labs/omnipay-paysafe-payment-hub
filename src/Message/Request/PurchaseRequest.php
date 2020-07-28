@@ -58,9 +58,15 @@ class PurchaseRequest extends Request
      */
     private function getNetellerData()
     {
-        $data = [
-            'consumerId' => $this->getConsumerId(),
-        ];
+        $data = [];
+
+        if ($this->getConsumerId()) {
+            $data['consumerId'] = $this->getConsumerId();
+        }
+
+        if (is_bool($this->getConsumerIdLocked())) {
+            $data['consumerIdLocked'] = $this->getConsumerIdLocked();
+        }
 
         if ($this->getDescription()) {
             $data['detail1Description'] = $this->getDescription();
@@ -105,6 +111,24 @@ class PurchaseRequest extends Request
     public function setConsumerId($value)
     {
         return $this->setParameter('consumerId', $value);
+    }
+
+    /**
+     * @return string
+     */
+    public function getConsumerIdLocked()
+    {
+        return $this->getParameter('consumerIdLocked');
+    }
+
+    /**
+     * @param string $value
+     *
+     * @return self
+     */
+    public function setConsumerIdLocked($value)
+    {
+        return $this->setParameter('consumerIdLocked', $value);
     }
 
     /**

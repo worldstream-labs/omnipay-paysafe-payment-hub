@@ -79,6 +79,7 @@ class PurchaseTest extends TestCase
             ],
             'neteller'        => [
                 'consumerId'         => 'consumer@example.com',
+                'consumerIdLocked'   => false,
                 'detail1Description' => 'description',
                 'detail1Text'        => 'text',
             ],
@@ -90,16 +91,17 @@ class PurchaseTest extends TestCase
     private function initializeData()
     {
         $this->request->initialize([
-            'amount'         => 11.00,
-            'currency'       => 'EUR',
-            'successUrl'     => 'https://url/success',
-            'failureUrl'     => 'https://url/failure',
-            'returnUrl'      => 'https://url/return',
-            'consumerId'     => 'consumer@example.com',
-            'merchantRefNum' => 'abcdefg',
-            'description'    => 'description',
-            'text'           => 'text',
-            'paymentMethod'  => 'neteller',
+            'amount'           => 11.00,
+            'currency'         => 'EUR',
+            'successUrl'       => 'https://url/success',
+            'failureUrl'       => 'https://url/failure',
+            'returnUrl'        => 'https://url/return',
+            'consumerId'       => 'consumer@example.com',
+            'consumerIdLocked' => false,
+            'merchantRefNum'   => 'abcdefg',
+            'description'      => 'description',
+            'text'             => 'text',
+            'paymentMethod'    => 'neteller',
         ]);
     }
 
@@ -144,6 +146,7 @@ class PurchaseTest extends TestCase
                 ],
                 'neteller' => [
                     'consumerId'         => 'consumer@example.com',
+                    'consumerIdLocked'   => false,
                     'detail1Description' => 'description',
                     'detail1Text'        => 'text',
                 ],
@@ -189,6 +192,7 @@ class PurchaseTest extends TestCase
             ],
             'neteller' => [
                 'consumerId'         => 'consumer@example.com',
+                'consumerIdLocked'   => false,
                 'detail1Description' => 'description',
                 'detail1Text'        => 'text',
             ],
