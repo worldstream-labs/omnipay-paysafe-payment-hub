@@ -26,6 +26,7 @@ Content-Type: application/json
     },
     "neteller": {
         "consumerId": "consumer@example.com",
+        "consumerIdLocked": false,
         "detail1Description": "description",
         "detail1Text": "text"
     },

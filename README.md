@@ -60,6 +60,8 @@ redirect($response->getRedirectUrl());
 
 This call will return the `PurchaseResponse` object. If the call is succesful then you can redirect the customer to the `redirectUrl`. Depending on the result in the next screen the customer will be redirected to the success or failure url.
 
+Note: `consumerId` is optional in the request, don't forget to add `consumerIdLocked` with value `false` when leaving `consumerId` out.
+
 ### Finalize Payment
 Before you can finalize the payment, make sure the payment handle is successfully created and payable using the `getPaymentHandle` call.
 
