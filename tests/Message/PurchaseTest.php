@@ -3,11 +3,11 @@
 namespace Omnipay\PaysafePaymentHub\Message;
 
 use GuzzleHttp\Psr7\Request as GuzzleRequest;
+use Omnipay\PaysafePaymentHub\Exception\RedirectUrlException;
 use Omnipay\PaysafePaymentHub\Message\Request\PurchaseRequest;
 use Omnipay\PaysafePaymentHub\Message\Request\Request;
 use Omnipay\PaysafePaymentHub\Message\Response\PurchaseResponse;
 use Omnipay\Tests\TestCase;
-use RuntimeException;
 use UnexpectedValueException;
 
 class PurchaseTest extends TestCase
@@ -224,9 +224,23 @@ class PurchaseTest extends TestCase
         $this->assertSame($expectedMessage, json_decode($response->getMessage(), true));
     }
 
+    public function testPurchaseResponseWithError()
+    {
+        $apiKey = 'abc';
+        $this->request->setApiKey($apiKey);
+        $this->initializeData();
+        $this->setMockHttpResponse('PurchaseError.txt');
+
+        /** @var PurchaseResponse $response */
+        $response = $this->request->send();
+
+        $this->assertFalse($response->isRedirect());
+        $this->assertFalse($response->isSuccessful());
+    }
+
     public function testPurchaseResponseIsMissingLinks()
     {
-        $this->expectException(RuntimeException::class);
+        $this->expectException(RedirectUrlException::class);
         $this->expectExceptionMessage('No redirect url available');
 
         $apiKey = 'abc';
@@ -242,7 +256,7 @@ class PurchaseTest extends TestCase
 
     public function testPurchaseResponseHasNoRedirectLink()
     {
-        $this->expectException(RuntimeException::class);
+        $this->expectException(RedirectUrlException::class);
         $this->expectExceptionMessage('No redirect url found');
 
         $apiKey = 'abc';

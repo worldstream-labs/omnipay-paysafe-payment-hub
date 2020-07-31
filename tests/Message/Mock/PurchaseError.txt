@@ -1,0 +1,30 @@
+HTTP/1.1 500
+Content-Type: application/json
+
+{
+  "error": {
+    "code": "5068",
+    "message": "Field error(s)",
+    "details": [
+      "Either you submitted a request that is missing a mandatory field or the value of a field does not match the format expected."
+    ],
+    "fieldErrors": [
+        {
+          "field": "returnLinks[].href",
+          "error":"Invalid value [https:\/\/localhost\/payment\/return], must be a valid URL address"
+        },
+        {
+          "field": "returnLinks[].href",
+          "error":"Invalid value [https:\/\/localhost\/payment\/return], must be a valid URL address"
+        },
+        {
+          "field": "returnLinks[].href",
+          "error":"Invalid value [https:\/\/localhost\/payment\/return], must be a valid URL address"
+        },
+        {
+          "field":"returnLinks[].rel",
+          "error":"The returnLinks must contain a [default] URL"
+        }
+    ]
+  }
+}
