@@ -5,13 +5,20 @@ namespace Omnipay\PaysafePaymentHub\Message\Response;
 use function array_key_exists;
 use function is_array;
 use Omnipay\Common\Message\RedirectResponseInterface;
+use Omnipay\PaysafePaymentHub\Exception\RedirectUrlException;
 use RuntimeException;
 
 class PurchaseResponse extends Response implements RedirectResponseInterface
 {
     public function isRedirect()
     {
-        return true;
+        try {
+            $this->getRedirectUrl();
+
+            return true;
+        } catch (RedirectUrlException $exception) {
+            return false;
+        }
     }
 
     /**
@@ -19,7 +26,11 @@ class PurchaseResponse extends Response implements RedirectResponseInterface
      */
     public function isSuccessful()
     {
-        return false;
+        if ($this->isRedirect()) {
+            return false;
+        }
+
+        return parent::isSuccessful();
     }
 
     /**
@@ -30,7 +41,7 @@ class PurchaseResponse extends Response implements RedirectResponseInterface
     public function getRedirectUrl()
     {
         if (!array_key_exists('links', $this->data) || !is_array($this->data['links'])) {
-            throw new RuntimeException('No redirect url available');
+            throw new RedirectUrlException('No redirect url available');
         }
 
         foreach ($this->data['links'] as $link) {
@@ -41,6 +52,6 @@ class PurchaseResponse extends Response implements RedirectResponseInterface
             return $link['href'];
         }
 
-        throw new RuntimeException('No redirect url found');
+        throw new RedirectUrlException('No redirect url found');
     }
 }
