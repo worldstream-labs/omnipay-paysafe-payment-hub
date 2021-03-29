@@ -10,7 +10,7 @@ set -xe
 apt-get update -yqq
 apt-get install git unzip -yqq
 
-pecl install xdebug-2.9.2 \
+(pecl install xdebug-2.9.8 || pecl install xdebug-2.5.5) \
   && docker-php-ext-enable xdebug
 
 curl -sS https://raw.githubusercontent.com/composer/getcomposer.org/d3e09029468023aa4e9dcd165e9b6f43df0a9999/web/installer | php --  --install-dir=/usr/local/bin --filename=composer
