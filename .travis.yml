@@ -8,6 +8,9 @@ php:
   - '7.3'
   - '7.4'
 
+before_script:
+- echo 'xdebug.mode = "coverage"' >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini
+
 install:
   - composer self-update
   - composer install
